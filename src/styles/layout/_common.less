@@ -1,0 +1,79 @@
+@import '../abstracts/_links.less';
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common layout of the site
+// -----------------------------------------------------------------------------
+[id="wrapper"] {
+  background: @base-background-color;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  .clearfix;
+  max-width: @max-width-center-container;
+  padding: @padding-container;
+  margin: 0 auto;
+}
+
+.section-main {
+  padding: 30px 0;
+
+  @media @md {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  @media @lg {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media @xl {
+    padding-top: 62px;
+    padding-bottom: 45px;
+  }
+}
+
+.twocolumns-row {
+  .column-text {
+    @media @xl {
+      padding-right: 30px;
+    }
+  }
+
+  .column-image {
+    @media @xl {
+      padding-left: 11px;
+    }
+  }
+}
+
+.section-content-holder {
+  padding: 15px 0 10px;
+
+  @media @xl {
+    padding-top: 20px;
+    padding-bottom: 27px;
+  }
+}
+
+.threecolumns-content {
+  .df-row {
+    @media @xl {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  [class^="col-"],
+  [class*=" col-"] {
+    @media @xl {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+

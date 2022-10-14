@@ -1,0 +1,32 @@
+header#header(class={'big-header': bigHeader === true})
+	.container
+		.logo
+			a(href='#')
+				if bigHeader === true
+					picture
+						source(srcset='./images/logo-small.svg', media='(max-width: 1023.98px)')
+						source(srcset='./images/logo-large.svg')
+						img(src='./images/logo-large.svg' alt='Wellspring Counseling', width='294' height='50')
+				else
+					img(src='./images/logo-small.svg' alt='Wellspring Counseling', width='292' height='68')
+		nav.nav-holder
+			ul
+				li(class={active: activeNavItem === "1"})
+					a(href='#') Item 01
+					ul.sub-menu
+						each item in ['Item 01-01', 'Item 01-02', 'Item 01-03']
+							li: a(href='#')!= item
+				li(class={active: activeNavItem === "2"})
+					a(href='#') Item 02
+					ul.sub-menu
+						each item in ['Item 02-01', 'Item 02-02']
+							li: a(href='#')!= item
+				li(class={active: activeNavItem === "3"}): a(href='#') Item 03
+				li(class={active: activeNavItem === "4"})
+					a(href='#') Item 04
+					ul.sub-menu
+						each item in ['Item 04-01', 'Item 04-02', 'Item 04-03', 'Item 04-04']
+							li: a(href='#')!= item
+				li(class={active: activeNavItem === "5"}): a(href='#') Item 05
+		a.nav-opener(href='#')
+			span

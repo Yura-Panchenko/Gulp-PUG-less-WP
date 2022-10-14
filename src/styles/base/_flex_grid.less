@@ -1,0 +1,1301 @@
+@import '../abstracts/_links.less';
+
+.df-row {
+  // .add-params();
+  // .flex-grid();
+
+  display: flex !important;
+  flex-wrap: wrap;
+  margin-left: (-@gutter);
+  margin-right: (-@gutter);
+
+  &.gx-4 {
+    margin-left: -16px;
+    margin-right: -16px;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &.gx-3 {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &.gx-2 {
+    margin-left: -8px;
+    margin-right: -8px;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  &.gx-1 {
+    margin-left: -6px;
+    margin-right: -6px;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+
+  &.gx-05 {
+    margin-left: -5px;
+    margin-right: -4px;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 5px;
+      padding-right: 4px;
+    }
+  }
+
+  &.gx-0 {
+    margin-left: 0;
+    margin-right: 0;
+
+    > [class^="col"],
+    > [class*=" col"],
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  > [class^="col"],
+  > [class*=" col"],
+  > [class^="col-"],
+  > [class*=" col-"] {
+    min-height: 1px;
+    position: relative;
+    padding-left: @gutter;
+    padding-right: @gutter;
+  }
+
+  .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+.col,
+[class^="col-"],
+[class*=" col-"]  {
+  max-width: 100%;
+  width: 100%;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.df-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.df-aic {
+  align-items: center;
+}
+
+.df-jce {
+  justify-content: flex-end;
+}
+
+.df-jcsb {
+  justify-content: space-between;
+}
+
+.df-md-jce {
+  @media @md {
+    justify-content: flex-end;
+  }
+}
+
+.df-md-start {
+  @media @md {
+    justify-content: start;
+  }
+}
+
+.df-md-jce {
+  @media @md {
+    justify-content: flex-end;
+  }
+}
+
+.df-sm-row-reverse {
+  @media @sm {
+    flex-direction: row-reverse;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.row-mobile-reverse {
+  @media @max-md {
+      flex-direction: column-reverse;
+  }
+}
+
+
+// styles for flex grid
+.df-row .col-0 {
+  -ms-flex: 1 0 calc(100% / 12 * 0);
+  flex: 1 0 calc(100% / 12 * 0);
+  max-width: calc(100% / 12 * 0);
+}
+
+.df-row .col-1 {
+  -ms-flex: 1 0 calc(100% / 12 * 1);
+  flex: 1 0 calc(100% / 12 * 1);
+  max-width: calc(100% / 12 * 1);
+}
+
+.df-row .col-2 {
+  -ms-flex: 1 0 calc(100% / 12 * 2);
+  flex: 1 0 calc(100% / 12 * 2);
+  max-width: calc(100% / 12 * 2);
+}
+
+.df-row .col-3 {
+  -ms-flex: 1 0 calc(100% / 12 * 3);
+  flex: 1 0 calc(100% / 12 * 3);
+  max-width: calc(100% / 12 * 3);
+}
+
+.df-row .col-4 {
+  -ms-flex: 1 0 calc(100% / 12 * 4);
+  flex: 1 0 calc(100% / 12 * 4);
+  max-width: calc(100% / 12 * 4);
+}
+
+.df-row .col-5 {
+  -ms-flex: 1 0 calc(100% / 12 * 5);
+  flex: 1 0 calc(100% / 12 * 5);
+  max-width: calc(100% / 12 * 5);
+}
+
+.df-row .col-6 {
+  -ms-flex: 1 0 calc(100% / 12 * 6);
+  flex: 1 0 calc(100% / 12 * 6);
+  max-width: calc(100% / 12 * 6);
+}
+
+.df-row .col-7 {
+  -ms-flex: 1 0 calc(100% / 12 * 7);
+  flex: 1 0 calc(100% / 12 * 7);
+  max-width: calc(100% / 12 * 7);
+}
+
+.df-row .col-8 {
+  -ms-flex: 1 0 calc(100% / 12 * 8);
+  flex: 1 0 calc(100% / 12 * 8);
+  max-width: calc(100% / 12 * 8);
+}
+
+.df-row .col-9 {
+  -ms-flex: 1 0 calc(100% / 12 * 9);
+  flex: 1 0 calc(100% / 12 * 9);
+  max-width: calc(100% / 12 * 9);
+}
+
+.df-row .col-10 {
+  -ms-flex: 1 0 calc(100% / 12 * 10);
+  flex: 1 0 calc(100% / 12 * 10);
+  max-width: calc(100% / 12 * 10);
+}
+
+.df-row .col-11 {
+  -ms-flex: 1 0 calc(100% / 12 * 11);
+  flex: 1 0 calc(100% / 12 * 11);
+  max-width: calc(100% / 12 * 11);
+}
+
+@media @ph {
+  .df-row .col-ph-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @ph {
+  .df-row .col-ph-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @ph {
+  .df-row .col-offset-ph-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+
+@media @sm {
+  .df-row .col-sm-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @sm {
+  .df-row .col-sm-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @sm {
+  .df-row .col-offset-sm-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}
+
+@media @md {
+  .df-row .col-md-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @md {
+  .df-row .col-md-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+@media @md {
+  .df-row .col-md-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @md {
+  .df-row .col-md-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @md {
+  .df-row .col-md-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @md {
+  .df-row .col-md-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @md {
+  .df-row .col-md-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @md {
+  .df-row .col-md-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @md {
+  .df-row .col-md-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @md {
+  .df-row .col-md-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @md {
+  .df-row .col-md-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @md {
+  .df-row .col-md-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @md {
+  .df-row .col-md-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @md {
+  .df-row .col-offset-md-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @lg {
+  .df-row .col-lg-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @lg {
+  .df-row .col-offset-lg-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @xl {
+  .df-row .col-xl-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @xl {
+  .df-row .col-offset-xl-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-1 {
+    -ms-flex: 1 0 calc(100% / 12 * 1);
+    flex: 1 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-2 {
+    -ms-flex: 1 0 calc(100% / 12 * 2);
+    flex: 1 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-3 {
+    -ms-flex: 1 0 calc(100% / 12 * 3);
+    flex: 1 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-4 {
+    -ms-flex: 1 0 calc(100% / 12 * 4);
+    flex: 1 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-5 {
+    -ms-flex: 1 0 calc(100% / 12 * 5);
+    flex: 1 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-6 {
+    -ms-flex: 1 0 calc(100% / 12 * 6);
+    flex: 1 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-7 {
+    -ms-flex: 1 0 calc(100% / 12 * 7);
+    flex: 1 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-8 {
+    -ms-flex: 1 0 calc(100% / 12 * 8);
+    flex: 1 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-9 {
+    -ms-flex: 1 0 calc(100% / 12 * 9);
+    flex: 1 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-10 {
+    -ms-flex: 1 0 calc(100% / 12 * 10);
+    flex: 1 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-11 {
+    -ms-flex: 1 0 calc(100% / 12 * 11);
+    flex: 1 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-12 {
+    -ms-flex: 1 0 calc(100% / 12 * 12);
+    flex: 1 0 calc(100% / 12 * 12);
+    max-width: calc(100% / 12 * 12);
+  }
+}
+
+@media @xxl {
+  .df-row .col-xxl-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-0 {
+    margin-left: calc(100% / 12 * 0);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-1 {
+    margin-left: calc(100% / 12 * 1);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-3 {
+    margin-left: calc(100% / 12 * 3);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-4 {
+    margin-left: calc(100% / 12 * 4);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-5 {
+    margin-left: calc(100% / 12 * 5);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-6 {
+    margin-left: calc(100% / 12 * 6);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-7 {
+    margin-left: calc(100% / 12 * 7);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-8 {
+    margin-left: calc(100% / 12 * 8);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-9 {
+    margin-left: calc(100% / 12 * 9);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-10 {
+    margin-left: calc(100% / 12 * 10);
+  }
+}
+
+@media @xxl {
+  .df-row .col-offset-xxl-11 {
+    margin-left: calc(100% / 12 * 11);
+  }
+}

@@ -1,0 +1,197 @@
+@import '../abstracts/_links.less';
+
+// Typography
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.h {
+  display: block;
+}
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+	color: @headings-color;
+	font-family: @headings-font-family;
+	font-weight: @bold;
+	margin: 0 0 20px;
+	line-height: 1.1;
+
+	@media @xl {
+		margin-bottom: 32px;
+	}
+
+	.column-content & {
+		color: @primary;
+		margin-bottom: 0;
+		padding: 0 0 1px;
+	}
+
+	a {
+		.link-inherit;
+	}
+}
+
+h1,
+.h1 {
+	font-size: @h1-font-size;
+	line-height: 1;
+
+	@media @md {
+		font-size: 40px;
+	}
+
+	@media @lg {
+		font-size: 45px;
+	}
+
+	@media @xl {
+		font-size: 50px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: @h2-font-size;
+	// margin: 0 0 20px;
+
+	// @media @md {
+	// 	margin: 0 0 30px;
+	// }
+
+	@media @lg {
+		font-size: 32px;
+	}
+}
+
+h3, .h3 {
+	font-size: @h3-font-size;
+	// margin: 0 0 20px;
+
+	@media @md {
+		// font-size: 30px;
+		// margin: 0 0 26px;
+	}
+
+	@media @lg {
+		font-size: 28px;
+	}
+}
+
+h4, .h4 {
+	font-size: @h4-font-size;
+	// margin: 0 0 3px;
+
+	@media @lg {
+		font-size: 24px;
+	}
+}
+
+h5, .h5 {
+	font-size: @h5-font-size;
+	margin-bottom: 27px;
+}
+
+h6, .h6 {
+	font-size: @h6-font-size;
+
+	@media @xl {
+		margin-bottom: 27px;
+	}
+
+	.section-content-holder & {
+		margin-bottom: 4px;
+	}
+}
+
+mark {
+	background-color: transparent;
+}
+
+p {
+	margin: 0 0 18px;
+
+	@media @md {
+		margin: 0 0 24px;
+	}
+}
+
+address {
+	font-style: normal;
+	margin: 0 0 20px;
+
+	@media @xl {
+		margin-bottom: 24px;
+	}
+}
+
+sub {
+	vertical-align: bottom;
+	font-size: .6em;
+}
+
+sup {
+	vertical-align: top;
+	font-size: 1em;
+}
+
+a {
+	transition: all @animation-speed @animation-timing-function;
+	color: @base-link-color;
+	text-decoration: @text-decoration;
+
+	@media (hover:hover) {
+		&:hover {
+			color: @base-link-hover-color;
+			text-decoration: @text-decoration-hover;
+		}
+	}
+
+	&.link-underline {
+		text-decoration: underline;
+
+		@media (hover:hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+mark {
+	background: transparent;
+	color: @secondary;
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+.title-main {
+	// margin-bottom: 35px;
+	margin-bottom: 30px;
+
+	@media @md {
+		// margin-bottom: 45px;
+		margin-bottom: 35px;
+	}
+
+	@media @lg {
+		// margin-bottom: 55px;
+		margin-bottom: 45px;
+	}
+	@media @xl {
+		// margin-bottom: 69px;
+		margin-bottom: 55px;
+	}
+}

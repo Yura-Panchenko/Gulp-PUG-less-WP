@@ -1,0 +1,55 @@
+/*
+Theme Name: Base
+Author: Anonymous
+Author URI:
+Version: 1
+Description: Base theme for Wordpress
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: base
+Tags: one-column, two-columns
+Theme URI:
+*/
+
+// copy-past to every *.less
+// @import '../abstracts/_links';
+
+// 1. Configuration and helpers
+@import 'base/_fonts';
+
+@import 'abstracts/_variables';
+@import 'abstracts/_mixins';
+
+// 2. Vendors: include media mixins and mormalize imported from node_modules
+@import 'vendors/_normalize';
+
+// 3. Base styles and elements
+@import 'base/_base';
+@import 'base/_cms_reset';
+@import 'base/_flex_grid';
+@import 'base/_forms';
+@import 'base/_helpers';
+@import 'base/_typography';
+
+// 4. Layout-related sections
+@import 'layout/_header';
+@import 'layout/_common';
+
+
+// 5. Components
+@import 'components/_button_links';
+@import 'components/_cards';
+@import 'components/_gform';
+
+
+// 6. Sections
+// @import 'sections/_';
+
+
+// 7. Page-specific styles
+// @import 'pages/_home';
+
+// 8. Themes
+// @import 'themes/_themes';
+
+@import 'layout/_footer';

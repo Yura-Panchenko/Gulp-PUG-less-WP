@@ -1,0 +1,21 @@
+//- +checkCustom({
+//- 	checkType: 'checkbox',
+//-     radioName: '',
+//- 	checkName: '',
+//-     checkedStatus: true,
+//- 	checkText: ''
+//- })
+mixin checkCustom(obj)
+    if obj.checkType == 'checkbox'
+        label.check-custom.checkbox-custom(for=''+ obj.checkName)
+            //- input(id=""+obj.checkName, type=''+obj.checkType, checked={"checked": obj.checkedStatus === true})
+            //- input(id=""+obj.checkName, type=''+obj.checkType, checked=""+obj.checkedStatus)
+            input(id=""+obj.checkName, type=''+obj.checkType)
+            span.check-custom__input
+            span.check-custom__label!= obj.checkText
+    else if obj.checkType == 'radio'
+        label.check-custom.radio-custom(for=''+ obj.checkName)
+            //- input(id=""+obj.checkName, type=''+obj.checkType, name=''+ obj.radioName checked={"checked": checkedStatus === false})
+            input(id=""+obj.checkName, type=''+obj.checkType, name=''+ obj.radioName    )
+            span.check-custom__input
+            span.check-custom__label!= obj.checkText

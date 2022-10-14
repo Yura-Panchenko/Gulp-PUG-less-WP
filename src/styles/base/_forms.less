@@ -1,0 +1,114 @@
+@import '../abstracts/_links.less';
+
+// forms
+form,
+fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+input[type='url'],
+input[type='date'],
+textarea,
+select {
+	.placeholder;
+	.animate(border-color);
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	width: 100%;
+	padding: @input-padding;
+	font-size: @input-font-size;
+	line-height: 1.1;
+	font-family: @input-font-family;
+	box-sizing: border-box;
+	border: @input-border;
+	// border-width: 0 0 @input-border-width;
+	border-radius: @input-border-radius;
+	background-color: @input-background;
+	padding: @input-padding;
+	color: @input-color;
+	display: block;
+	margin-bottom: 10px;
+	font-family: trade-gothic-next, sans-serif;
+
+	&:not(textarea) {
+		height: @input-height;
+		line-height: @input-line-height;
+	}
+
+	&:focus {
+		outline: none;
+		//border-color: @input-focus-border-color;
+	}
+
+	.section-form & {
+		border-color: transparent;
+	}
+
+	.placeholder (
+		@placeholder-color;
+	)
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+textarea {
+	vertical-align: top;
+	overflow: auto;
+	min-height: 78px;
+	height: 150px;
+	max-height: 160px;
+	resize: none;
+}
+
+form {
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="file"],
+	input[type="submit"] {
+		transition: .3s all;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		background: @submit-background;
+		border: @submit-border;
+		display: inline-block;
+		vertical-align: top;
+		font-weight: @btn-font-weight;
+		font-size: @btn-font-size;
+		font-family: @btn-font-family;
+		line-height: @submit-line-height;
+		padding: @btn-padding;
+		color: @submit-color;
+		border: none;
+		cursor: pointer;
+		height: @submit-height;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: @submit-hover-background;
+			color: @submit-hover-color;
+			text-decoration: none;
+		}
+	}
+
+	button[type="button"],
+	button[type="submit"],
+	button[type="reset"] {
+		position: relative;
+
+		&:after {
+			content: '>';
+			margin: 0 0 0 5px;
+		}
+	}
+}
+

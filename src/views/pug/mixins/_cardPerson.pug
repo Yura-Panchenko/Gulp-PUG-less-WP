@@ -1,0 +1,41 @@
+//- +cardPerson({
+	addClassCard: '',
+	imgName: 'photo-',
+	imgExt: 'jpg',
+	imgAlt: '',
+	imgWidth: '116',
+	imgHeight: '151',
+	personTitle: 'Amy Moreno',
+	personText: ['', ''],
+	linkText: 'About >',
+	descriptionText: ['', ''],
+	contactBlock: true,
+	contactName: '',
+	contactTel: '',
+	contactTelLink: '',
+	contactEmail: ''
+//- })
+mixin cardPerson(obj)
+	.card-person.card
+		.img-holder
+			img(src='images/'+obj.imgName+'.'+obj.imgExt, alt=obj.imgAlt || "image description", width=''+obj.imgWidth, height=''+obj.imgHeight)
+		.card-body
+			.card-title-block
+				h3.card-title!= obj.personTitle
+				if obj.personText
+					each item in obj.personText
+						p!= item
+			if obj.linkText
+				p #[a.link-text(href="#")!= obj.linkText]
+			if obj.descriptionText
+				each item in obj.descriptionText
+					p!= item
+			if obj.contactBlock === true
+				.contact-block
+					strong.h6 
+						| Contact&nbsp;
+						span!= obj.contactName
+						| &nbsp;at&nbsp;
+					p
+						a(href="tel:+"+obj.contactTelLink)!= obj.contactTel
+					p!= obj.contactEmail

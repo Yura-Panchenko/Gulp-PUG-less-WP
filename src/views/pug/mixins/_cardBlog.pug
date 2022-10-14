@@ -1,0 +1,39 @@
+//- +cardBlog({
+    addClassCard: '',
+    imgName: 'img-blog-0',
+    imgExt: 'jpg',
+    imgAlt: '',
+    imgWidth: '254',
+    imgHeight: '169',
+    blogTitle: '',
+    blogBy: '',
+    textDate: 'May 29, 2022',
+    dateFormat: '2022-05-29',
+    blogCategory: '',
+    blogText: ['', '']
+//- })
+mixin cardBlog(obj)
+    .card-blog.card
+        .card-body
+            if obj.imgName
+                .img-holder
+                    img(src='images/'+obj.imgName+'.'+obj.imgExt, alt=obj.imgAlt || "image description", width=''+obj.imgWidth, height=''+obj.imgHeight)
+            .card-body-holder
+                .title-block
+                    if obj.blogTitle
+                        h3.card-title
+                            a(href="#")!= obj.blogTitle
+                    if obj.blogBy
+                        span.by
+                            | by&nbsp;
+                            a(href="#")!= obj.blogBy
+                    .blog-meta-info
+                        if obj.textDate != ''
+                            time(datetime=""+ obj.dateFormat)= obj.textDate
+                            | &nbsp;in&nbsp;
+                            if obj.blogCategory
+                                span.category
+                                    a(href="#")!= obj.blogCategory
+                each item in obj.blogText
+                    p!= item
+                p #[a.link-text(href="#")!= obj.linkText]

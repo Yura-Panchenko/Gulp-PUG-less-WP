@@ -1,0 +1,21 @@
+//- +bannerSlide({
+	addClassCard: 'big-banner skills',
+	imgPath: './images/',
+	imgName: 'img-banner-01',
+	imgExt: 'jpg',
+	imgAlt: '',
+	imgWidth: '1280',
+	imgHeight: '600',
+	title: 'Life is messy.',
+	titleText: 'Our lives get messy. There’s no way around it. <br>WellSpring Counseling is here for when you’re <br>not sure how to get out of the mess.',
+	btnText: 'REQUEST A SESSION',
+	btnFooterFullWidth: 'Send password reset link'
+//- })
+mixin bannerSlide(obj)
+	li(class=""+obj.addClassCard, style="background-image: url("+obj.imgPath+obj.imgName+'.'+obj.imgExt+')')
+		.container
+			.wrapper
+				h1!= obj.title
+				p!= obj.titleText
+				.button-block
+					a.btn.btn-primary(href='#')!= obj.btnText

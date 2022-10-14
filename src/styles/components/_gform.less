@@ -1,0 +1,134 @@
+@import '../abstracts/_links.less';
+
+.gform_wrapper {
+    margin: 0 0 2px;
+
+    .gform_heading {
+        display: none !important;
+    }
+
+    .ginput_container {
+        margin-top: 8px;
+    }
+
+    ul.gform_fields,
+    ul.gfield_radio {
+        margin: 0!important;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul.gform_fields {
+        overflow: visible;
+    }
+
+    li.gfield {
+        margin-top: 0;
+        padding-right: 0;
+        width: 100%;
+        display: block;
+        max-width: 100% !important;
+    }
+
+    ul.gfield_radio {
+        margin: 6px 0;
+        padding: 0;
+    }
+
+    textarea {
+        height: 160px;
+        min-height: 160px;
+    }
+
+    .hidden_label {
+        .gfield_label {
+            clip: rect(1px,1px,1px,1px);
+            position: absolute!important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+    }
+
+    .radio-buttons {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start !important;
+        padding: 2px 0 2px 8px;
+
+        + .radio-buttons {
+            @media @xl {
+                padding-top: 9px;
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    .gform_footer {
+        padding: 16px 0 0;
+
+        .button {
+            min-width: 122px;
+        }
+    }
+}
+
+.radio-buttons {
+    li {
+        display: inline-block;
+
+        + li {
+            padding-left: 1px;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked {
+            + label {
+                &:before {
+                    .input-radio-checked;
+                    border-width: 6px;
+                }
+            }
+        }
+    }
+
+    label {
+        font-size: 14px;
+        letter-spacing: normal;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 0 0 10px;
+
+        @media @xl {
+            margin-left: 13px;
+        }
+
+        &:before {
+            .input-radio;
+            .size(18px);
+            content: '';
+            border-color: transparent;
+            // border: 1px solid white;
+            // background-color: white;
+            // border-radius: 50%;
+            flex: 0 0 18px;
+            margin: 0 4px 0 0;
+            display: inline-block;
+            transition: all @animation-speed @animation-timing-function;
+        }
+    }
+
+    .gfield_description:not(.validation_message) {
+        font-size: 14px;
+        letter-spacing: normal;
+        line-height: 1;
+        min-width: 100px;
+    }
+}

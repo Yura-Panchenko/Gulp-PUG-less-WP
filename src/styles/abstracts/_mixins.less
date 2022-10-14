@@ -1,0 +1,501 @@
+@import '../abstracts/_variables.less';
+
+// vertical align el inside parent with fixed height/min-height
+// usage
+// html - .parent>.child
+// scss - .v-align;
+//     or .v-align(250px);
+//     or .v-align(250px, bottom, before);
+//
+
+// vertical alignment
+.v-align(@v-height: 100%, @v-align: middle) {
+	text-align: center;
+	white-space: nowrap;
+
+	&:after {
+		content: '';
+		width: 0;
+		min-height: @v-height;
+		display: inline-block;
+		vertical-align: @v-align;
+	}
+
+	> * {
+		white-space: normal;
+		display: inline-block;
+		vertical-align: @v-align;
+		max-width: 99%;
+	}
+}
+
+
+// vertical align a pair of child el inside parent
+// usage
+// html - .post>.image+.text
+// scss - .v-align-pair(image, text);
+//     or .v-align-pair(image, text, bottom);
+//     or .v-align-pair(image, text, middle, 200px);
+//
+
+// @mixin v-align-pair(@child-name1, @child-name2, @valign: middle, @width1: auto, @width2: auto) {
+//   display: table;
+
+//   .#{@child-name1} {
+//     display: table-cell;
+//     vertical-align: @valign;
+//     width: @width1;
+//   }
+
+//   .#{@child-name2} {
+//     display: table-cell;
+//     vertical-align: @valign;
+//     width: @width2;
+//   }
+// }
+
+
+// vertical align el
+// usage: .vertical-align-el;
+//
+.vertical-align-el {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/// Mixin helping defining both `width` and `height` simultaneously.
+///
+/// @author Hugo Giraudel
+///
+/// @access public
+///
+/// @param {Length} @width - Element’s `width`
+/// @param {Length} @height (@width) - Element’s `height`
+///
+/// @example scss - Usage
+///   .foo {
+///     .size(10em);
+///   }
+///
+///   .bar {
+///     .size(100%, 10em);
+///   }
+///
+/// @example css - CSS output
+///   .foo {
+///     width: 10em;
+///     height: 10em;
+///   }
+///
+///   .bar {
+///     width: 100%;
+///     height: 10em;
+///   }
+///
+.size(@width, @height: @width) {
+  width: @width;
+  height: @height;
+}
+
+/// font-smothing
+/// .font-smoothing(on);
+/// .font-smoothing(off);
+.font-smoothing(@value: on) {
+  @if @value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }@else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+
+/// Hides the text in an element, commonly used to show an image. Some elements will need block-level styles applied.
+///
+/// @link http://zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+///
+/// @example scss - Usage
+///   .element {
+///     .hide-text;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     overflow: hidden;
+///     text-indent: 101%;
+///     white-space: nowrap;
+///   }
+///
+.hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+// list reset
+.listreset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// clearfix
+.clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+// transition
+.transition {
+	transition: all @animation-speed ;
+}
+
+// justify nav
+.justify {
+	text-align: justify;
+	font-size: 1px;
+	line-height: 0;
+
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		font-size: @font-size-base;
+		line-height: @line-height-base;
+	}
+
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+
+/// Animate css properties
+// usage
+// scss - .animate(color);
+//     or .animate(color width);
+//     or .animate(color width, 1s, linear);
+//
+@animation-speed: 0.25s;
+
+.animate(@properties: color;) {
+	transition: @properties @animation-speed @animation-timing-function;
+}
+
+// this don't work
+// .animate(@properties, @duration: @animation-speed, @easing: @animation-timing-function) {
+// 	@list: ();
+// 	@each @prop in @properties {
+// 	  @str: #{@prop} #{@duration} #{@easing};
+// 	  @list: join(@list, #{@str}, comma);
+// 	}
+// 	transition: @list;
+// }
+
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   .placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     .placeholder {
+///      color: red;
+///     }
+///   }
+
+.placeholder (@content: @placeholder-color;) {
+	&::-webkit-input-placeholder {
+		color: @content;
+	}
+
+	&::-moz-placeholder {
+		opacity: 1;
+		color: @content;
+	}
+
+	&:-moz-placeholder {
+		color: @content;
+	}
+
+	&:-ms-input-placeholder {
+		color: @content;
+	}
+
+	&.placeholder {
+		color: @content;
+	}
+}
+
+
+//font-face
+.font-face(@font-name, @font-path, @weight, @style) {
+  @font-face {
+    font-family: '#{@font-name}';
+    src: url('fonts/#{@font-path}.woff2') format('woff'),
+         url('fonts/#{@font-path}.woff') format('woff');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+.icon-icomoon(@content: "\e902", @font-size: inherit) {
+	content: @content;
+	font-family: 'icomoon';
+	font-size: @font-size;
+	line-height: 1;
+	text-indent: 0;
+}
+
+// Button sizes
+.button-color(@btn-background, @btn-color, @btn-border, @btn-hover-background, @btn-hover-border, @btn-hover-color) {
+  background: @btn-background;
+  color: @btn-color;
+  border: @btn-border;
+
+  &:hover {
+    background: @btn-hover-background;
+    color: @btn-hover-color;
+    border-color: @btn-hover-border-color;
+  }
+}
+
+// for absolute position block
+.absolute(@top: 0, @bottom: 0, @left: 0, @right: 0) {
+	position: absolute;
+	top: @top;
+	bottom: @bottom;
+	left: @left;
+	right: @right;
+}
+
+// aligning center absolute block
+.center-vh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-h {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.center-v {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.inline-block(@align:top) {
+	display:inline-block;
+	vertical-align:@align;
+}
+
+// background imege styles
+.bg-stretch(@alignX: 50%, @alignY: 50%) {
+  background-position: @alignX @alignY;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+	white-space: nowrap; /* 1 */
+	text-overflow: ellipsis; /* 2 */
+	overflow: hidden;
+}
+
+// object fit for image
+.object-fit(@fit: cover, @position: center) {
+	object-fit: @fit;
+	object-position: @position;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+// set link styles
+.link-inherit(@color-hover: @alt-link-hover-color) {
+	color: inherit;
+	text-decoration: none;
+
+	@media (hover:hover) {
+		&:hover {
+			color: @color-hover;
+			opacity: 1;
+		}
+	}
+}
+
+.link-inherit-underline(@color-hover: @alt-link-hover-color) {
+	color: inherit;
+	text-decoration: underline;
+
+	@media (hover:hover) {
+		&:hover {
+			color: @color-hover;
+			opacity: 1;
+		}
+	}
+}
+
+// set link styles
+.link-color(@color: @info, @color-hover: @base-text-color) {
+	color: @color;
+	text-decoration: none;
+
+	@media (hover:hover) {
+		&:hover {
+			color: @color-hover;
+			opacity: 1;
+		}
+	}
+}
+
+// set link styles
+.link-color-underline(@color: @info, @color-hover: @base-text-color) {
+	color: @color;
+	// text-decoration: none;
+
+	@media (hover:hover) {
+		&:hover {
+			color: @color-hover;
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+}
+
+.input-radio {
+	.size(15px);
+	display: inline-block;
+	vertical-align: top;
+	background: @check-bg-color;
+	border: 1px solid @check-border-color;
+	border-radius: 50%;
+}
+
+.input-radio-checked {
+	background: @white;
+	border: 4px solid @primary;
+}
+
+.input-checkbox {
+	.size(15px);
+	background: @check-bg-color;
+	border: 1px solid @check-border-color;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.input-checkbox-checked {
+	background-color: @check-bg-active-color;
+	border: 1px solid @check-border-active-color;
+}
+
+.input-checkbox-checked-icon {
+	.icon-icomoon("\e901" ,12px);
+	.center-v;
+	left: 3px;
+	color: @white;
+}
+
+// @mixin add-params() {
+//   @each @val, @media in @grid {
+//     &.df-rr-#{@val} {
+//       @include media('≥' + @media) {
+//         flex-direction: row-reverse;
+//       }
+//     }
+
+//     &.df-aic-#{@val} {
+//       @include media('≥' + @media) {
+//         align-items: center;
+//       }
+//     }
+//   }
+// }
+
+// flex grid
+// @mixin flex-grid() {
+//   @each @val, @media in @grid {
+//     @for @gutter from 1 through 12 {
+//       .col-#{@val}-#{@gutter} {
+//         @include media('≥' + @media) {
+//           flex: 1 0 calc(100% / 12 * #{@gutter});
+//           max-width: calc(100% / 12 * #{@gutter});
+//         }
+//       }
+//     }
+
+//     @for @gutter from 0 through 11 {
+//       .col-offset-#{@val}-#{@gutter} {
+//         @include media('≥' + @media) {
+//           margin-left: calc(100% / 12 * #{@gutter});
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @mixin v-center(@min-height: 400px) {
+//   display: flex;
+
+//   > * {
+//     min-height: @min-height;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     width: 100%;
+//   }
+// }
+
+// .Mq(@breakpoints; @rules;) {
+// 	// If there's only one breakpoint specified
+// 	& when (length(@breakpoints) = 1) {
+// 		@query: ~"(min-width: @{breakpoint-@{breakpoints}})";
+// 		@media screen and @query {@rules();};
+// 	}
+
+// 	// If there's two breakpoints specified
+// 	& when (length(@breakpoints) = 2) {
+// 		@bpMin: extract(@breakpoints, 1);
+// 		@maxVar: extract(@breakpoints, 2);
+// 		@tmpMax: ~"breakpoint-@{maxVar}";
+// 		@bpMax: (@@tmpMax - 1);
+
+// 		// If the first "breakpoint" = -, then let's build a max-width query
+// 		& when (@bpMin = -) {
+// 			@query: ~"(max-width: @{bpMax})";
+// 			@media screen and @query {@rules();};
+// 		}
+
+// 		// If the first breakpoint is something else than "-",
+// 		// then let's build a min-width AND max-width query
+// 		& when not (@bpMin = -) {
+// 			@query: ~"(min-width: @{breakpoint-@{bpMin}}) and (max-width: @{bpMax})";
+// 			@media screen and @query {@rules();};
+// 		}
+// 	}
+// }

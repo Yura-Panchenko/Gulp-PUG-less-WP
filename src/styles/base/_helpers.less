@@ -1,0 +1,257 @@
+@import '../abstracts/_links.less';
+
+// list reset
+.listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// clearfix
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// transition
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+// justify nav
+.justify {
+  text-align: justify;
+  font-size: 1px;
+  line-height: 0;
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.bgCover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.absoluteCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+  white-space: nowrap; /* 1 */
+  text-overflow: ellipsis; /* 2 */
+  overflow: hidden;
+}
+
+.list-unstyled {
+  .listreset;
+}
+
+// transitions
+.fade {
+  transition: opacity .15s linear;
+
+  &:not(.show) {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+// hidden/visible  styles
+
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-ph-block {
+  @media @ph {
+    display: block !important;
+  }
+}
+
+.d-ph-none {
+  @media @ph {
+    display: none !important;
+  }
+}
+
+.d-sm-block {
+  @media @sm {
+    display: block !important;
+  }
+}
+
+.d-sm-none {
+  @media @sm {
+    display: none !important;
+  }
+}
+
+.d-md-block {
+  @media @md {
+    display: block !important;
+  }
+}
+
+.d-md-none {
+  @media @md {
+    display: none !important;
+  }
+}
+
+.d-lg-block {
+  @media @lg {
+    display: block !important;
+  }
+}
+
+.d-lg-none {
+  @media @lg {
+    display: none !important;
+  }
+}
+
+.d-xl-block {
+  display: none !important;
+
+  @media @xl {
+    display: block !important;
+  }
+}
+
+.d-xl-none {
+  @media @xl {
+    display: none !important;
+  }
+}
+
+// visibility styles
+.visible-md {
+  @media @max-sm {
+    display: none !important;
+  }
+}
+
+.invisible-md {
+  @media @md {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.visible-lg {
+  @media @max-md {
+    display: none !important;
+  }
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+
+// text Colors
+.text-white {
+  color: @white !important;
+}
+
+.text-primary {
+  color: @primary !important;
+}
+
+.text-success {
+  color: @success !important;
+}
+
+.text-secondary {
+  color: @secondary !important;
+}
+
+// font weight styles
+.fw-normal {
+  font-weight: normal !important;
+}
+
+// text transformation
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+// text alignment
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-md-left {
+  @media @md {
+    text-align: left !important;
+  }
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-md-right {
+  @media @md {
+    text-align: right !important;
+  }
+}
+
+// text sizing
+.text-small {
+  font-size: 12px !important;
+  line-height: (18 / 12) !important;
+}
+
+.text-large {
+  font-size: 16px !important;
+  line-height: (26 / 16) !important;
+
+  @media @lg {
+    font-size: 18px !important;
+    line-height: (28 / 18) !important;
+  }
+}
+
+.mb-1 {
+  margin-bottom: 4px !important;
+}

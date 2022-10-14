@@ -1,0 +1,96 @@
+@import '../abstracts/_links.less';
+
+.card {
+	background: @card-bg;
+    border-radius: @card-border-radius;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: @card-margin-bottom;
+}
+
+.card-header,
+.card-body,
+.card-footer {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+
+.card-header {
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+	@media @md {
+		padding-top: 12px;
+    	padding-bottom: 12px;
+	}
+
+	@media @xl {
+		padding-top: 16px;
+    	padding-bottom: 16px;
+	}
+}
+
+.card-body {
+    flex: 1 1 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+    @media @lg {
+		padding-top: 24px;
+		padding-bottom: 24px;
+    }
+}
+
+.card-footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+.card-image {
+	position: relative;
+	margin: 0 0 10px;
+
+	&:after {
+		.absolute(0);
+		.animate(transform);
+		content:'';
+		background-color: rgba(161, 205, 58, .8);
+		// background-image: url(images/img-decor02.png);
+		background-size: 31px auto;
+		background-position: center;
+		background-repeat: no-repeat;
+		transform: scale(0);
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+// .cards-holder {
+// 	@media @sm {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		margin: 0 -17px;
+// 	}
+
+// 	&:last-child {
+// 		margin-bottom: -40px;
+// 	}
+
+// 	.card {
+// 		padding: 0 0 40px;
+
+// 		@media @sm {
+// 			width: 50%;
+// 			padding: 0 17px 40px;
+// 		}
+
+// 		@media @lg {
+// 			width: 33.3%;
+// 			padding: 0 17px 40px;
+// 		}
+// 	}
+// }

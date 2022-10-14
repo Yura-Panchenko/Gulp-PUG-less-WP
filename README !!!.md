@@ -1,0 +1,2 @@
+/* !!! After building for production, all unnecessary CSS folders should be removed from the DIST folder !!! */
+/* These folders are generated from the SCSS source because of an issue with the JSON settings file */

@@ -1,0 +1,60 @@
+@import '../abstracts/_links.less';
+
+.check-custom {
+  display: flex;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.check-custom {
+  input[type='radio'] {
+    &:checked + .check-custom__input {
+      .input-radio-checked;
+    }
+  }
+
+  input[type='checkbox'] {
+    &:checked + .check-custom__input {
+      .input-checkbox-checked;
+    }
+  }
+
+  .check-custom__input {
+    margin: -1px 10px 1px 0;
+  }
+}
+
+// .checkbox-custom,
+// .radio-custom {
+
+// }
+
+.checkbox-custom {
+  .check-custom__input {
+    .input-checkbox;
+
+    .card-filter & {
+      border-color: transparent;
+    }
+  }
+}
+
+.radio-custom {
+  .check-custom__input {
+    .input-radio;
+
+    .card-filter & {
+      border-color: transparent;
+    }
+  }
+}
+
+.check-custom__label {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1;
+}

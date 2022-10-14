@@ -1,0 +1,21 @@
+-var wrapperClass = 'homepage'
+
+-var bigHeader = true;
+-var activeNavItem = "0"
+
+include ./pug/common/_head
+	block content
+		include ./pug/common/_header
+		main#main
+			.container
+				.section-main
+					h1 Hello, world!
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis molestiae voluptates aut deserunt mollitia voluptatum aliquid perferendis exercitationem, eveniet harum praesentium rerum impedit at dolores porro voluptatem corrupti sapiente est.
+					ul
+						li lorem
+						li dolor
+						li consectetur
+						li molestiae
+						li deserunt
+
+		include ./pug/common/_footer
